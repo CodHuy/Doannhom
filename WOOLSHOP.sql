@@ -1,8 +1,8 @@
-﻿-- Tạo Cơ Sở Dữ Liệu
-CREATE DATABASE WoolShop;
+-- Tạo Cơ Sở Dữ Liệu
+CREATE DATABASE Coloshop;
 
 -- Sử dụng Cơ Sở Dữ Liệu vừa tạo
-USE WoolShop;
+USE Coloshop;
 
 -- Tạo bảng Danh Mục Sản Phẩm
 CREATE TABLE Categories (
@@ -111,5 +111,4 @@ CREATE TABLE ProductReviews (
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
-
 
