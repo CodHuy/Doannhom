@@ -31,6 +31,18 @@ CREATE TABLE Customers (
 	Phone NVARCHAR(10)
 );
 
+-- Tạo bảng Blog
+CREATE TABLE Blogs (
+    BlogID INT PRIMARY KEY IDENTITY,
+    Title NVARCHAR(255),
+    Content NVARCHAR(MAX),
+    AuthorID INT,
+    PublishedDate DATETIME,
+    CategoryID INT,
+    FOREIGN KEY (AuthorID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+);
+
 -- Tạo bảng Phương Thức Thanh Toán
 CREATE TABLE PaymentMethods (
     PaymentMethodID INT PRIMARY KEY IDENTITY,
@@ -101,4 +113,3 @@ CREATE TABLE ProductReviews (
 );
 
 
-Select * from ProductReviews;
