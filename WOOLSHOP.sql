@@ -31,6 +31,16 @@ CREATE TABLE Customers (
 	Phone NVARCHAR(10)
 );
 
+-- Tạo bảng Accounts
+CREATE TABLE Accounts (
+    AccountID INT PRIMARY KEY IDENTITY,
+    Username NVARCHAR(100) UNIQUE,
+    Password NVARCHAR(100),
+    CustomerID INT,
+    Role NVARCHAR(50),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
 -- Tạo bảng Blog
 CREATE TABLE Blogs (
     BlogID INT PRIMARY KEY IDENTITY,
